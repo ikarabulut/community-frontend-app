@@ -36,7 +36,7 @@ export default {
   created: function () {
     axios.get("/events/" + this.$route.params.id).then((response) => {
       console.log("event show", response);
-      this.group = response.data;
+      this.event = response.data;
     });
   },
   methods: {

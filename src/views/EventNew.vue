@@ -19,25 +19,37 @@
       <input type="text" v-model="newEventParams.volunteers_needed" />
       Description:
       <input type="text" v-model="newEventParams.description" />
-      <input type="submit" value="Create" />
+      <input type="submit" value="Submit" />
     </form>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+
 export default {
   data: function () {
     return {
-      newEventParams: {},
+      newEventParams: {
+        group_id: 1,
+      },
+      tags: [],
       errors: [],
     };
   },
-  created: function () {},
+  created: function () {
+    this.indexTags();
+  },
   methods: {
+    indexTags: function () {
+      axios.get("/tags").then((response) => {
+        console.log("tags", response);
+        this.tags = response.data;
+      });
+    },
     createEvent: function () {
       axios
-        .post("/groups/${:group_id}/events", this.newEventParams)
+        .post("/groups/" + this.newEventParams.group_id + "/events", this.newEventParams)
         .then((response) => {
           console.log("event create", response);
           this.$router.push("/events");
