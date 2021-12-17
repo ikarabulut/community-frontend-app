@@ -4,6 +4,7 @@
     <div v-for="event in events" v-bind:key="event.id">
       <h2>{{ event.name }}</h2>
       <p>event group: {{ event.group.name }}</p>
+      <a :href="`/events/${event.id}`" class="btn btn-primary">View Event</a>
     </div>
   </div>
 </template>
