@@ -8,6 +8,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import GroupShow from "../views/GroupShow.vue";
 import EventShow from "../views/EventShow.vue";
+import GroupNew from "../views/GroupNew.vue";
 
 Vue.use(VueRouter);
 
@@ -32,6 +33,7 @@ const routes = [
   { path: "/logout", name: "logout", component: Logout },
   { path: "/groups/:id", name: "group-show", component: GroupShow },
   { path: "/events/:id", name: "event-show", component: EventShow },
+  { path: "/groups/new", name: "group-new", component: GroupNew },
 ];
 
 const router = new VueRouter({
