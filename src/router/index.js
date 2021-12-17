@@ -6,6 +6,8 @@ import EventsIndex from "../views/EventsIndex.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import GroupShow from "../views/GroupShow.vue";
+import EventShow from "../views/EventShow.vue";
 
 Vue.use(VueRouter);
 
@@ -28,6 +30,8 @@ const routes = [
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
+  { path: "/groups/:id", name: "group-show", component: GroupShow },
+  { path: "/events/:id", name: "event-show", component: EventShow },
 ];
 
 const router = new VueRouter({
