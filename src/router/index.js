@@ -9,6 +9,9 @@ import Logout from "../views/Logout.vue";
 import GroupShow from "../views/GroupShow.vue";
 import EventShow from "../views/EventShow.vue";
 import GroupNew from "../views/GroupNew.vue";
+import EventNew from "../views/EventNew.vue";
+import GroupEdit from "../views/GroupEdit.vue";
+import EventEdit from "../views/EventEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +37,9 @@ const routes = [
   { path: "/groups/:id", name: "group-show", component: GroupShow },
   { path: "/events/:id", name: "event-show", component: EventShow },
   { path: "/groups/new", name: "group-new", component: GroupNew },
+  { path: "/events/new", name: "event-new", component: EventNew },
+  { path: "/groups/:id/edit", name: "group-edit", component: GroupEdit },
+  { path: "/events/:id/edit", name: "event-edit", component: EventEdit },
 ];
 
 const router = new VueRouter({

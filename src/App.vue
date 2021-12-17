@@ -9,6 +9,8 @@
       |
       <router-link to="/groups/new">Create Group</router-link>
       |
+      <router-link to="/events/new">Create Event</router-link>
+      |
       <router-link to="/events">All Events</router-link>
       |
       <router-link to="/signup">Signup</router-link>
