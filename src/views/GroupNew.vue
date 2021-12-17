@@ -1,21 +1,31 @@
 <template>
   <div class="group-new">
-    <h1>New Group</h1>
     <form v-on:submit.prevent="createGroup()">
+      <h1>Create a Group!</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      Name:
-      <input type="text" v-model="newGroupParams.name" />
-      Email:
-      <input type="text" v-model="newGroupParams.email" />
-      Address:
-      <input type="text" v-model="newGroupParams.address" />
-      Website:
-      <input type="text" v-model="newGroupParams.website" />
-      MIssion Statement:
-      <input type="text" v-model="newGroupParams.mission_statement" />
-      <input type="submit" value="Create" />
+      <div>
+        <label>Name:</label>
+        <input type="text" v-model="newGroupParams.name" />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="text" v-model="newGroupParams.email" />
+      </div>
+      <div>
+        <label>Address:</label>
+        <input type="text" v-model="newGroupParams.address" />
+      </div>
+      <div>
+        <label>Website:</label>
+        <input type="text" v-model="newGroupParams.website" />
+      </div>
+      <div>
+        <label>Mission Statement:</label>
+        <input type="text" v-model="newGroupParams.mission_statement" />
+      </div>
+      <input type="submit" value="Submit" />
     </form>
   </div>
 </template>
