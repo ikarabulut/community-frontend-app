@@ -4,6 +4,7 @@
     <p>Group Name: {{ group.name }}</p>
     <p>Group Admin: {{ group.user_id }}</p>
     <p>Mission Statement: {{ group.mission_statement }}</p>
+    <a :href="`${group.id}/events/new`" class="btn btn-primary">Create Event</a>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ export default {
   data: function () {
     return {
       group: {},
+      rsvp: "",
     };
   },
   created: function () {

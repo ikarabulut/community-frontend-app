@@ -37,7 +37,7 @@ const routes = [
   { path: "/groups/:id", name: "group-show", component: GroupShow },
   { path: "/events/:id", name: "event-show", component: EventShow },
   { path: "/group/new", name: "group-new", component: GroupNew },
-  { path: "/event/new", name: "event-new", component: EventNew },
+  { path: "/groups/:id/events/new", name: "event-new", component: EventNew },
   { path: "/groups/:id/edit", name: "group-edit", component: GroupEdit },
   { path: "/events/:id/edit", name: "event-edit", component: EventEdit },
 ];

@@ -30,19 +30,11 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newEventParams: {
-        group_id: 1,
-      },
-      tags: [],
-      tag1: "",
-      tag2: "",
-      tag3: "",
+      newEventParams: {},
       errors: [],
     };
   },
-  created: function () {
-    this.indexTags();
-  },
+  created: function () {},
   methods: {
     indexTags: function () {
       axios.get("/tags").then((response) => {
@@ -52,9 +44,9 @@ export default {
     },
     createEvent: function () {
       axios
-        .post("/groups/" + this.newEventParams.group_id + "/events", this.newEventParams)
+        .post("/groups/" + this.$route.params.id + "/events", this.newEventParams)
         .then((response) => {
-          console.log("event create", response);
+          console.log("event create", response.data);
           this.$router.push("/events");
         })
         .catch((error) => {

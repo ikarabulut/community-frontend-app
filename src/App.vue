@@ -9,8 +9,6 @@
       |
       <router-link to="/group/new">Create Group</router-link>
       |
-      <router-link to="/event/new">Create Event</router-link>
-      |
       <router-link to="/events">All Events</router-link>
       |
       <router-link to="/signup">Signup</router-link>
@@ -45,3 +43,25 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
