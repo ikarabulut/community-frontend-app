@@ -17,11 +17,6 @@
       <!-- / banner-content -->
     </div>
     <!-- / header-banner -->
-    <div v-for="group in groups" v-bind:key="group.id">
-      <h2>{{ group.name }}</h2>
-      <p>Mission Statement: {{ group.mission_statement }}</p>
-      <a :href="`/groups/${group.id}`" class="btn btn-primary">View Group</a>
-    </div>
     <div class="container">
       <ul class="row shop list-unstyled" id="grid">
         <!-- product -->
