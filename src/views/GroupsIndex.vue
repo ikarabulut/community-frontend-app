@@ -36,7 +36,7 @@
 
               <!-- product-hover-tools -->
               <div class="product-hover-tools">
-                <a href="/groups/${group.id}" class="view-btn" data-toggle="tooltip" title="View Group">
+                <a :href="'/groups/' + group.id" class="view-btn" data-toggle="tooltip" title="View Group">
                   <i class="lnr lnr-eye"></i>
                 </a>
                 <!-- <a href="shopping-cart.html" class="cart-btn" data-toggle="tooltip" title="Add to Cart">
