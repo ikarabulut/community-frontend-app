@@ -29,7 +29,7 @@ export default {
     };
   },
   methods: {
-    submit: function () {
+    submitSession: function () {
       axios
         .post("/sessions", this.newSessionParams)
         .then((response) => {

@@ -131,7 +131,7 @@
                 </a>
                 <ul class="dropdown-menu animated zoomIn fast">
                   <li>
-                    <a href="/login"><span>LOGIN / REGISTER</span></a>
+                    <a href="/signup"><span>LOGIN / REGISTER</span></a>
                   </li>
                   <li>
                     <a href="/logout"><span>LOGOUT</span></a>
