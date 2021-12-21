@@ -16,11 +16,7 @@
           </div>
           <!-- / navbar-header -->
           <div class="secondary-nav">
-            <a href="login-register.html" class="my-account space-right"><i class="fa fa-user"></i></a>
-            <a href="shopping-cart.html" class="shopping-cart">
-              <i class="fa fa-shopping-cart"></i>
-              <span class="cart-badge">2</span>
-            </a>
+            <a href="/login" class="my-account space-right"><i class="fa fa-user"></i></a>
           </div>
           <div class="navbar-collapse collapse text-center">
             <ul class="nav navbar-nav">
@@ -33,6 +29,7 @@
               <li>
                 <a href="/about"><span>ABOUT</span></a>
               </li>
+
               <!-- <li class="dropdown">
                 <a
                   href="#"
@@ -118,20 +115,26 @@
                   <li>
                     <a href="shopping-cart.html"><span>MY EVENTS (BUILD)</span></a>
                   </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span>ACCOUNT</span>
+                  <span class="dropdown-icon"></span>
+                </a>
+                <ul class="dropdown-menu animated zoomIn fast">
                   <li>
-                    <a href="login-register.html"><span>LOGIN / REGISTER</span></a>
+                    <a href="/login"><span>LOGIN / REGISTER</span></a>
                   </li>
                   <li>
-                    <a href="my-account.html"><span>MY ACCOUNT</span></a>
-                  </li>
-                  <li>
-                    <a href="checkout.html"><span>CHECKOUT</span></a>
-                  </li>
-                  <li>
-                    <a href="404.html"><span>404 PAGE</span></a>
-                  </li>
-                  <li>
-                    <a href="components.html"><span>COMPONENTS</span></a>
+                    <a href="/logout"><span>LOGOUT</span></a>
                   </li>
                 </ul>
               </li>

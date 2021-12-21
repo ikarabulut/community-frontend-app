@@ -247,26 +247,26 @@
           >
             <div class="img-bg-color primary">
               <h5 class="product-price">{{ groupEvent.date }}</h5>
-              <a href="single-product.html" class="product-link"></a>
+              <a :href="`/events/${groupEvent.id}`" class="product-link"></a>
               <!-- / product-link -->
-              <img src="images/m-product.jpg" alt="" />
+              <img :src="groupEvent.image_url" alt="Volunteer photo" />
               <!-- / product-image -->
 
               <!-- product-hover-tools -->
               <div class="product-hover-tools">
-                <a href="single-product.html" class="view-btn" data-toggle="tooltip" title="View Product">
+                <a :href="`/events/${groupEvent.id}`" class="view-btn" data-toggle="tooltip" title="View Product">
                   <i class="lnr lnr-eye"></i>
                 </a>
-                <a href="shopping-cart.html" class="cart-btn" data-toggle="tooltip" title="Add to Cart">
+                <!-- <a href="shopping-cart.html" class="cart-btn" data-toggle="tooltip" title="Add to Cart">
                   <i class="lnr lnr-cart"></i>
-                </a>
+                </a> -->
               </div>
               <!-- / product-hover-tools -->
 
               <!-- product-details -->
               <div class="product-details">
-                <h5 class="product-title">PRODUCT TITLE</h5>
-                <p class="product-category">CATEGORY</p>
+                <h5 class="product-title">{{ groupEvent.name }}</h5>
+                <p class="product-category">{{ groupEvent.address }}</p>
               </div>
               <!-- / product-details -->
             </div>
