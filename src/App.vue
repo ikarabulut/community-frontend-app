@@ -3,7 +3,7 @@
     <!-- header -->
     <header>
       <!-- nav -->
-      <nav class="navbar navbar-default nav-sec navbar-fixed-top">
+      <nav class="navbar navbar-dsdefault nav-sec navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,7 +16,10 @@
           </div>
           <!-- / navbar-header -->
           <div class="secondary-nav">
-            <a href="/login" class="my-account space-right"><i class="fa fa-user"></i></a>
+            <a class="my-account space-right">
+              Welcome: {{ this.current_user }}
+              <i class="fa fa-user"></i>
+            </a>
           </div>
           <div class="navbar-collapse collapse text-center">
             <ul class="nav navbar-nav">
@@ -302,8 +305,10 @@ export default {
   data: function () {
     return {
       flashMessage: "",
+      current_user: localStorage.getItem("name"),
     };
   },
+  created: function () {},
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {

@@ -1,7 +1,6 @@
 // shop.html template
 <template>
   <div class="groups-index">
-    <h1>All Groups</h1>
     <!-- header-banner -->
     <div id="header-banner">
       <div class="banner-content single-page text-center">

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
     <!-- header-banner -->
     <div id="header-banner" class="demo-1">
       <div class="banner-content text-center">
