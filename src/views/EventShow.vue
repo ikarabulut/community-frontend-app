@@ -5,9 +5,9 @@
       <div id="header-banner">
         <div class="banner-content single-page text-center">
           <div class="banner-border">
-            <div class="banner-info">
-              <h1>Single Product</h1>
-              <p>Fashion Product</p>
+            <div :key="event" class="banner-info">
+              <h1>Event</h1>
+              <p>{{ event.name }}</p>
             </div>
             <!-- / banner-info -->
           </div>
@@ -47,7 +47,6 @@
                 <li class="active">
                   <a href="#description" role="tab" data-toggle="tab" aria-expanded="true">DESCRIPTION</a>
                 </li>
-                <li class=""><a href="#info" role="tab" data-toggle="tab" aria-expanded="false">EVENT INFO</a></li>
               </ul>
               <!-- / nav-tabs -->
               <div :key="event.id" class="tab-content">
@@ -58,132 +57,8 @@
                 </div>
                 <!-- / description-tab -->
 
-                <div role="tabpanel" class="tab-pane animated fadeIn" id="info">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <table>
-                        <tbody>
-                          <tr>
-                            <th>Sizes:</th>
-                            <td>Small, Medium, Large</td>
-                          </tr>
-                          <tr>
-                            <th>Colors:</th>
-                            <td>Beige, Black, Blue</td>
-                          </tr>
-                          <tr>
-                            <th>Fabric:</th>
-                            <td>100% Cotton</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <table>
-                        <tbody>
-                          <tr>
-                            <th>Weight:</th>
-                            <td>0.5 Kg</td>
-                          </tr>
-                          <tr>
-                            <th>Made In:</th>
-                            <td>USA</td>
-                          </tr>
-                          <tr>
-                            <th>More Info:</th>
-                            <td>Lorem ipsum.</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <!-- / row -->
-                </div>
                 <!-- / info-tab -->
 
-                <div role="tabpanel" class="tab-pane animated fadeIn" id="reviews">
-                  <div class="reviews">
-                    <div class="review-author pull-left">
-                      <img src="images/author1.jpg" alt="" />
-                    </div>
-                    <div class="review-content">
-                      <h4 class="review-title no-margin">Amazing product!</h4>
-                      <div class="review-stars">
-                        <span class="product-rating">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                        </span>
-                      </div>
-                      <!-- / review-stars -->
-                      <p>
-                        Duis luctus, neque ac ultricies bibendum, risus velit gravida velit, vestibulum laoreet orci
-                        magna vel ipsum.
-                      </p>
-                      <cite>- Johana Doe</cite>
-                    </div>
-                    <!-- / review-content -->
-
-                    <div class="space-25">&nbsp;</div>
-
-                    <div class="review-author pull-left">
-                      <img src="images/author2.jpg" alt="" />
-                    </div>
-                    <div class="review-content">
-                      <h4 class="review-title no-margin">Very good product!</h4>
-                      <div class="review-stars">
-                        <span class="product-rating">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-o"></i>
-                        </span>
-                      </div>
-                      <!-- / review-stars -->
-                      <p>
-                        Morbi sodales ornare ex, at consectetur ipsum faucibus at. Ut facilisis orci metus, vitae
-                        hendrerit leo vulputate sit amet.
-                      </p>
-                      <cite>- Jane Doe</cite>
-                    </div>
-                    <!-- / review-content -->
-
-                    <!-- add review -->
-                    <div id="add-review" class="space-top-30">
-                      <h4 class="">LEAVE A REVIEW</h4>
-                      <div class="row">
-                        <div class="col-sm-4 review-form">
-                          <input type="text" class="form-control" placeholder="*NAME" required />
-                        </div>
-                        <div class="col-sm-4 review-form">
-                          <input type="email" class="form-control" placeholder="*EMAIL" required />
-                        </div>
-                        <div class="col-sm-4 review-form">
-                          <select class="form-control">
-                            <option>5 STARS</option>
-                            <option>4 STARS</option>
-                            <option>3 STARS</option>
-                            <option>2 STARS</option>
-                            <option>1 STAR</option>
-                          </select>
-                        </div>
-                        <div class="col-sm-12 review-form">
-                          <textarea rows="7" class="form-control" placeholder="*REVIEW" required></textarea>
-                          <button type="submit" class="btn btn-submit btn-primary-filled btn-rounded">
-                            Submit Review
-                          </button>
-                        </div>
-                      </div>
-                      <!-- / row -->
-                    </div>
-                    <!-- / add review -->
-                  </div>
-                  <!-- / reviews -->
-                </div>
                 <!-- / reviews-tab -->
               </div>
               <!-- / tab-content -->
@@ -196,15 +71,24 @@
           <div class="col-sm-6 col-md-5 product-sidebar">
             <div class="product-sidebar-details">
               <h4 :key="event.id">{{ event.name }}</h4>
-              <p :key="event.id">
-                Praesent sed arcu id dui viverra dapibus et sed est. Mauris vel felis vitae massa suscipit pretium non
-                vel ipsum. Mauris et lacus lacinia, tincidunt elit vel, aliquam sapien. Nam quis pharetra nisi.
-              </p>
+              <p :key="event.id">This event is hosted by {{ event.group.name }}</p>
               <div class="product-info">
                 <div :key="event.id" class="info">
                   <p>
-                    <i class="lnr lnr-tag"></i>
+                    <i class="lnr lnr-heart"></i>
                     <span>Date:{{ event.date }}</span>
+                  </p>
+                </div>
+                <div :key="event.id" class="info">
+                  <p>
+                    <i class="lnr lnr-heart"></i>
+                    <span>Start Time:{{ event.start_time }}</span>
+                  </p>
+                </div>
+                <div :key="event.id" class="info">
+                  <p>
+                    <i class="lnr lnr-heart"></i>
+                    <span>Duration:{{ event.duration }}</span>
                   </p>
                 </div>
                 <div class="info">
@@ -219,7 +103,15 @@
                 <div class="info">
                   <p>
                     <i class="lnr lnr-menu"></i>
-                    <span>SKU: 1456842493</span>
+                    <span>Volunteers Needed: {{ event.volunteers_needed }}</span>
+                  </p>
+                  <p>
+                    <i class="lnr lnr-menu"></i>
+                    <span>RSVPs (Going):</span>
+                  </p>
+                  <p>
+                    <i class="lnr lnr-menu"></i>
+                    <span>RSVPs (Maybe):</span>
                   </p>
                 </div>
               </div>
