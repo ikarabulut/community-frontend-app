@@ -219,7 +219,7 @@
             <div class="buy-product">
               <div class="space-25">&nbsp;</div>
 
-              <a :href="`${group.id}/events/new`" class="btn btn-primary-filled btn-rounded">
+              <a :href="`/groups/${group.id}/events/new`" class="btn btn-primary-filled btn-rounded">
                 <i class="lnr lnr-cart"></i>
                 <span>Create Event</span>
               </a>

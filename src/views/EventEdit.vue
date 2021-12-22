@@ -1,21 +1,20 @@
 <template>
   <div class="event-edit">
-    <header>
-      <!-- header-banner -->
-      <div id="header-banner">
-        <div class="banner-content single-page text-center">
-          <div class="banner-border">
-            <div class="banner-info">
-              <h1>Update Event</h1>
-            </div>
-            <!-- / banner-info -->
+    <!-- header-banner -->
+    <div id="header-banner">
+      <div class="banner-content single-page text-center">
+        <div class="banner-border">
+          <div class="banner-info">
+            <h1>Update Event</h1>
           </div>
-          <!-- / banner-border -->
+          <!-- / banner-info -->
         </div>
-        <!-- / banner-content -->
+        <!-- / banner-border -->
       </div>
-      <!-- / header-banner -->
-    </header>
+      <!-- / banner-content -->
+    </div>
+    <!-- / header-banner -->
+
     <!-- / header -->
 
     <!-- content -->
@@ -84,6 +83,7 @@
             <!-- / row -->
 
             <div class="checkout-form-footer space-left space-right">
+              Description:
               <textarea class="form-control" name="message" v-model="event.description"></textarea>
               <a v-on:submit.prevent="updateEvent(event)" class="btn btn-primary-filled btn-rounded">
                 <span>Update Event</span>

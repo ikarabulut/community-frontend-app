@@ -26,9 +26,6 @@
               <li class="active">
                 <a href="/"><span>HOME</span></a>
               </li>
-              <li>
-                <a href="contact.html"><span>MY HOME (BUILD)</span></a>
-              </li>
 
               <!-- <li class="dropdown">
                 <a
@@ -77,7 +74,7 @@
                     <a href="/groups"><span>ALL GROUPS</span></a>
                   </li>
 
-                  <li>
+                  <li v-if="isLoggedIn()">
                     <a href="/group/new"><span>CREATE GROUP</span></a>
                   </li>
                   <!-- <li>
@@ -300,7 +297,9 @@ export default {
       current_user: localStorage.getItem("name"),
     };
   },
-  created: function () {},
+  created: function () {
+    localStorage.getItem("name");
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
