@@ -243,11 +243,11 @@
                 <div class="space-25">&nbsp;</div>
 
                 <a v-on:click.prevent="pushRsvp(rsvp)" class="btn btn-primary-filled btn-rounded">
-                  <i class="lnr lnr-cart"></i>
+                  <i class=""></i>
                   <span>Submit RSVP</span>
                 </a>
-                <a :href="`events/${event.id}/edit`" class="btn btn-success-filled btn-rounded">
-                  <i class="lnr lnr-heart"></i>
+                <a :href="`/events/${event.id}/edit`" class="btn btn-success-filled btn-rounded">
+                  <i class=""></i>
                   <span>Update Event</span>
                 </a>
               </div>

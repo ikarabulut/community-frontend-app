@@ -1,55 +1,104 @@
 <template>
   <div class="event-edit">
-    <h1>Edit Event</h1>
-    <form v-on:submit.prevent="updateEvent(event)">
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      Name:
-      <input type="text" v-model="event.name" />
-      Date:
-      <input type="text" v-model="event.date" />
-      Start Time:
-      <input type="text" v-model="event.start_time" />
-      Duration:
-      <input type="text" v-model="event.duration" />
-      Address:
-      <input type="text" v-model="event.address" />
-      Volunteers Needed:
-      <input type="text" v-model="event.volunteers_needed" />
-      Description:
-      <input type="text" v-model="event.description" />
-      <input type="submit" value="Update" />
-    </form>
-    Add Tags:
-    <div>
-      <p v-for="tag in tags" :key="tag.id">id: {{ tag.id }}, name: {{ tag.tag }}</p>
+    <header>
+      <!-- header-banner -->
+      <div id="header-banner">
+        <div class="banner-content single-page text-center">
+          <div class="banner-border">
+            <div class="banner-info">
+              <h1>Update Event</h1>
+            </div>
+            <!-- / banner-info -->
+          </div>
+          <!-- / banner-border -->
+        </div>
+        <!-- / banner-content -->
+      </div>
+      <!-- / header-banner -->
+    </header>
+    <!-- / header -->
+
+    <!-- content -->
+
+    <!-- shopping-cart -->
+    <div id="checkout">
+      <div class="container">
+        <div class="row checkout-screen">
+          <div class="col-sm-8 checkout-form">
+            <h4 class="space-left">UPDATE EVENT</h4>
+
+            <div class="row">
+              <div :key="event" class="col-sm-6">
+                Event Name:
+                <input type="text" class="form-control" name="name" v-model="event.name" />
+                Event Date:
+                <input type="date" class="form-control" name="date" v-model="event.date" />
+                Start Time:
+                <input type="time" class="form-control" name="start_time" v-model="event.start_time" />
+                Duration (min):
+                <input type="integer" class="form-control" name="duration" v-model="event.duration" />
+              </div>
+              <div class="col-sm-6">
+                Address:
+                <input type="address" class="form-control" name="address" v-model="event.address" />
+                Volunteers Needed:
+                <input type="integer" class="form-control" name="volunteers_needed" v-model="event.volunteers_needed" />
+                Image Url:
+                <input type="text" class="form-control" name="image_url" v-model="event.image_url" />
+              </div>
+            </div>
+            <!-- / row -->
+
+            <div class="row">
+              <div class="col-sm-6">
+                Tag 1:
+                <select v-model="tag1" class="form-control">
+                  <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
+                </select>
+                <a v-on:click.prevent="push1(tag1)" class="btn btn-primary-filled btn-rounded">
+                  <span>Submit Tag 1</span>
+                </a>
+                <br />
+                <br />
+
+                Tag 3:
+                <select v-model="tag3" class="form-control" name="country">
+                  <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
+                </select>
+                <a v-on:click.prevent="push3(tag3)" class="btn btn-primary-filled btn-rounded">
+                  <span>Submit Tag 3</span>
+                </a>
+                <br />
+                <br />
+              </div>
+              <div class="col-sm-6">
+                Tag 2:
+                <select v-model="tag2" class="form-control" name="country">
+                  <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
+                </select>
+                <a v-on:click.prevent="push2(tag2)" class="btn btn-primary-filled btn-rounded">
+                  <span>Submit Tag 2</span>
+                </a>
+              </div>
+            </div>
+            <!-- / row -->
+
+            <div class="checkout-form-footer space-left space-right">
+              <textarea class="form-control" name="message" v-model="event.description"></textarea>
+              <a v-on:submit.prevent="updateEvent(event)" class="btn btn-primary-filled btn-rounded">
+                <span>Update Event</span>
+              </a>
+            </div>
+            <!-- / checkout-form-footer -->
+          </div>
+          <!-- / checkout-form -->
+
+          <!-- / checkout-total -->
+        </div>
+        <!-- / row -->
+      </div>
+      <!-- / container -->
     </div>
-    <br />
-    Tag 1:
-    <select v-model="tag1">
-      <option v-for="tag in tags" :key="tag.id">
-        {{ tag.id }}
-      </option>
-    </select>
-    <button v-on:click.prevent="push1(tag1)">Submit tag</button>
-
-    Tag 2:
-
-    <select v-model="tag2">
-      <option v-for="tag in tags" :key="tag.id">
-        {{ tag.id }}
-      </option>
-    </select>
-    <button v-on:click.prevent="push2(tag2)">Submit tag</button>
-
-    Tag 3:
-    <select v-model="tag3">
-      <option v-for="tag in tags" :key="tag.id">
-        {{ tag.id }}
-      </option>
-    </select>
-    <button v-on:click.prevent="push3(tag3)">Submit tag</button>
   </div>
 </template>
 
@@ -69,7 +118,7 @@ export default {
   created: function () {
     axios.get("/events/" + this.$route.params.id).then((response) => {
       console.log("event show", response.data);
-      this.event_id = response.data;
+      this.event = response.data;
     });
     this.indexTags();
   },
@@ -97,7 +146,7 @@ export default {
       this.tag1 = tag;
       console.log(this.tag1);
       axios
-        .post("/events/" + this.$route.params.id + "/tags", { tag_id: this.tag1, event: this.event.id })
+        .post("/events/" + this.$route.params.id + "/tags", { tag: this.tag1, event: this.event.id })
         .then((response) => {
           console.log("tag event created", response.data);
         })
