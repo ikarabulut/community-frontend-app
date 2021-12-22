@@ -5,8 +5,8 @@
       <div class="banner-content single-page text-center">
         <div class="banner-border">
           <div class="banner-info">
-            <h1>Single Product</h1>
-            <p>Fashion Product</p>
+            <h1>Group</h1>
+            <p>{{ group.name }}</p>
           </div>
           <!-- / banner-info -->
         </div>
@@ -35,150 +35,18 @@
               <li class="active">
                 <a href="#description" role="tab" data-toggle="tab" aria-expanded="true">DESCRIPTION</a>
               </li>
-              <li class=""><a href="#info" role="tab" data-toggle="tab" aria-expanded="false">PRODUCT INFO</a></li>
-              <li class=""><a href="#reviews" role="tab" data-toggle="tab" aria-expanded="false">REVIEWS (2)</a></li>
             </ul>
             <!-- / nav-tabs -->
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane animated fadeIn active" id="description">
                 <p>
-                  Cras mattis odio non dolor elementum, at imperdiet nisi semper. Cras maximus placerat luctus. Praesent
-                  blandit sodales mi, sed viverra dolor venenatis sit amet. Nam non mauris odio. Vestibulum id urna eget
-                  nibh molestie tempus sit amet id lectus.
-                </p>
-                <p>
-                  Aenean ut suscipit purus, ut facilisis erat. Integer at nulla sit amet augue consequat pulvinar.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
+                  {{ group.description }}
                 </p>
               </div>
               <!-- / description-tab -->
 
-              <div role="tabpanel" class="tab-pane animated fadeIn" id="info">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <table>
-                      <tbody>
-                        <tr>
-                          <th>Sizes:</th>
-                          <td>Small, Medium, Large</td>
-                        </tr>
-                        <tr>
-                          <th>Colors:</th>
-                          <td>Beige, Black, Blue</td>
-                        </tr>
-                        <tr>
-                          <th>Fabric:</th>
-                          <td>100% Cotton</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <table>
-                      <tbody>
-                        <tr>
-                          <th>Weight:</th>
-                          <td>0.5 Kg</td>
-                        </tr>
-                        <tr>
-                          <th>Made In:</th>
-                          <td>USA</td>
-                        </tr>
-                        <tr>
-                          <th>More Info:</th>
-                          <td>Lorem ipsum.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <!-- / row -->
-              </div>
               <!-- / info-tab -->
 
-              <div role="tabpanel" class="tab-pane animated fadeIn" id="reviews">
-                <div class="reviews">
-                  <div class="review-author pull-left">
-                    <img src="images/author1.jpg" alt="" />
-                  </div>
-                  <div class="review-content">
-                    <h4 class="review-title no-margin">Amazing product!</h4>
-                    <div class="review-stars">
-                      <span class="product-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </span>
-                    </div>
-                    <!-- / review-stars -->
-                    <p>
-                      Duis luctus, neque ac ultricies bibendum, risus velit gravida velit, vestibulum laoreet orci magna
-                      vel ipsum.
-                    </p>
-                    <cite>- Johana Doe</cite>
-                  </div>
-                  <!-- / review-content -->
-
-                  <div class="space-25">&nbsp;</div>
-
-                  <div class="review-author pull-left">
-                    <img src="images/author2.jpg" alt="" />
-                  </div>
-                  <div class="review-content">
-                    <h4 class="review-title no-margin">Very good product!</h4>
-                    <div class="review-stars">
-                      <span class="product-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                      </span>
-                    </div>
-                    <!-- / review-stars -->
-                    <p>
-                      Morbi sodales ornare ex, at consectetur ipsum faucibus at. Ut facilisis orci metus, vitae
-                      hendrerit leo vulputate sit amet.
-                    </p>
-                    <cite>- Jane Doe</cite>
-                  </div>
-                  <!-- / review-content -->
-
-                  <!-- add review -->
-                  <div id="add-review" class="space-top-30">
-                    <h4 class="">LEAVE A REVIEW</h4>
-                    <div class="row">
-                      <div class="col-sm-4 review-form">
-                        <input type="text" class="form-control" placeholder="*NAME" required />
-                      </div>
-                      <div class="col-sm-4 review-form">
-                        <input type="email" class="form-control" placeholder="*EMAIL" required />
-                      </div>
-                      <div class="col-sm-4 review-form">
-                        <select class="form-control">
-                          <option>5 STARS</option>
-                          <option>4 STARS</option>
-                          <option>3 STARS</option>
-                          <option>2 STARS</option>
-                          <option>1 STAR</option>
-                        </select>
-                      </div>
-                      <div class="col-sm-12 review-form">
-                        <textarea rows="7" class="form-control" placeholder="*REVIEW" required></textarea>
-                        <button type="submit" class="btn btn-submit btn-primary-filled btn-rounded">
-                          Submit Review
-                        </button>
-                      </div>
-                    </div>
-                    <!-- / row -->
-                  </div>
-                  <!-- / add review -->
-                </div>
-                <!-- / reviews -->
-              </div>
               <!-- / reviews-tab -->
             </div>
             <!-- / tab-content -->
@@ -192,25 +60,33 @@
           <div class="product-sidebar-details">
             <h4>{{ group.name }}</h4>
             <p>
+              <b>Mission Statement:</b>
+
               {{ group.mission_statement }}
             </p>
             <div class="product-info">
               <div class="info">
                 <p>
-                  <i class="lnr lnr-tag"></i>
+                  <i class="lnr lnr-heart"></i>
                   <span>Website: {{ group.website }}</span>
                 </p>
               </div>
               <div class="info">
                 <p>
                   <i class="lnr lnr-heart"></i>
-                  <span>Cause(s):</span>
+                  <span>Email: {{ group.email }}</span>
                 </p>
               </div>
               <div class="info">
                 <p>
-                  <i class="lnr lnr-menu"></i>
+                  <i class="lnr lnr-heart"></i>
                   <span>Address: {{ group.address }}</span>
+                </p>
+              </div>
+              <div class="info">
+                <p>
+                  <i class="lnr lnr-heart"></i>
+                  <span>Cause(s):</span>
                 </p>
               </div>
             </div>
@@ -224,7 +100,7 @@
                 :href="`/groups/${group.id}/events/new`"
                 class="btn btn-primary-filled btn-rounded"
               >
-                <i class="lnr lnr-cart"></i>
+                <i class=""></i>
                 <span>Create Event</span>
               </a>
               <a
@@ -232,7 +108,7 @@
                 :href="`/groups/${group.id}/edit`"
                 class="btn btn-success-filled btn-rounded"
               >
-                <i class="lnr lnr-heart"></i>
+                <i class=""></i>
                 <span>Update Group</span>
               </a>
             </div>
@@ -253,6 +129,7 @@
             class="col-xs-6 col-md-4 product m-product"
             data-groups='["mens"]'
           >
+            <h5>{{ groupEvent.name }}</h5>
             <div class="img-bg-color primary">
               <h5 class="product-price">{{ groupEvent.date }}</h5>
               <a :href="`/events/${groupEvent.id}`" class="product-link"></a>
@@ -274,7 +151,7 @@
               <!-- product-details -->
               <div class="product-details">
                 <h5 class="product-title">{{ groupEvent.name }}</h5>
-                <p class="product-category">{{ groupEvent.address }}</p>
+                <p class="product-category">Volunteers Needed: {{ groupEvent.volunteers_needed }}</p>
               </div>
               <!-- / product-details -->
             </div>
