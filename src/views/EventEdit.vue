@@ -33,7 +33,7 @@
                 Event Date:
                 <input type="date" class="form-control" name="date" v-model="event.date" />
                 Start Time:
-                <input type="time" class="form-control" name="start_time" v-model="event.start_time" />
+                <input type="text" class="form-control" name="start_time" v-model="event.start_time" />
                 Duration (min):
                 <input type="integer" class="form-control" name="duration" v-model="event.duration" />
               </div>
@@ -85,7 +85,7 @@
             <div class="checkout-form-footer space-left space-right">
               Description:
               <textarea class="form-control" name="message" v-model="event.description"></textarea>
-              <a v-on:submit.prevent="updateEvent(event)" class="btn btn-primary-filled btn-rounded">
+              <a v-on:click.prevent="updateEvent(event)" class="btn btn-primary-filled btn-rounded">
                 <span>Update Event</span>
               </a>
             </div>

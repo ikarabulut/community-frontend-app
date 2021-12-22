@@ -77,7 +77,7 @@ export default {
   methods: {
     indexGroups: function () {
       axios.get("/groups").then((response) => {
-        console.log("groups index", response);
+        console.log("groups index", response.data);
         this.groups = response.data;
       });
     },

@@ -14,215 +14,7 @@
       </div>
       <!-- / banner-content -->
     </div>
-    <section v-if="isLoggedIn()" id="my-account">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2 account-sidebar">
-            <img src="images/account-img.jpg" alt="" />
-            <p><a href="#personal-info" class="page-scroll">PERSONAL INFO</a></p>
-            <p><a href="#shipping-info" class="page-scroll">SHIPPING INFO</a></p>
-            <p><a href="#my-orders" class="page-scroll">MY ORDERS</a></p>
-            <p><a href="#my-reviews" class="page-scroll">MY REVIEWS</a></p>
-            <p><a href="#wishlist" class="page-scroll">WISHLIST</a></p>
-          </div>
-          <!-- / account-sidebar -->
 
-          <div class="col-sm-10 account-info">
-            <div id="personal-info" class="account-info-content">
-              <h4>
-                PERSONAL INFO
-                <span class="pull-right">
-                  <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                    <i class="lnr lnr-pencil"></i>
-                    <span>Edit</span>
-                  </a>
-                </span>
-              </h4>
-              <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-2">
-                  <img src="images/account-img.jpg" alt="" />
-                  <a href="#x" class="btn btn-primary btn-xs btn-rounded no-margin">Change Image</a>
-                </div>
-
-                <div class="col-xs-6 col-sm-8 col-md-10">
-                  <p>
-                    Full Name:
-                    <span>John Doe</span>
-                  </p>
-                  <p>
-                    Country:
-                    <span>USA</span>
-                  </p>
-                  <p>
-                    Email:
-                    <span>me@mysite.com</span>
-                  </p>
-                  <p>
-                    Phone:
-                    <span>+0123 456 789</span>
-                  </p>
-                  <p>
-                    Date of Birth:
-                    <span>Aug. 13, 1991</span>
-                  </p>
-                </div>
-              </div>
-              <!-- / row -->
-            </div>
-            <!-- / personal-info -->
-
-            <div id="shipping-info" class="account-info-content">
-              <h4>
-                SHIPPING INFO
-                <span class="pull-right">
-                  <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                    <i class="lnr lnr-pencil"></i>
-                    <span>Edit</span>
-                  </a>
-                </span>
-              </h4>
-              <p class="space-bottom">
-                <span><strong>John Doe - me@mysite.com</strong></span>
-              </p>
-              <p>
-                Country:
-                <span>USA</span>
-              </p>
-              <p>
-                State:
-                <span>Florida</span>
-              </p>
-              <p>
-                City:
-                <span>Miami</span>
-              </p>
-              <p>
-                Address Line:
-                <span>S Miami Ave, SW 20th, Suite 3864</span>
-              </p>
-              <p>
-                ZIP Code:
-                <span>33222</span>
-              </p>
-              <div class="account-info-footer">
-                <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                  <i class="fa fa-plus"></i>
-                  <span>Add New Address</span>
-                </a>
-              </div>
-            </div>
-            <!-- / shipping-info -->
-
-            <div id="my-orders" class="account-info-content">
-              <h4>
-                MY ORDERS
-                <span class="pull-right">
-                  <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                    <i class="lnr lnr-pencil"></i>
-                    <span>Edit</span>
-                  </a>
-                </span>
-              </h4>
-              <p>
-                <a href="#x">Order #38726</a>
-                <span>- Paid & Shipped</span>
-                - Tracking No:
-                <span>#TRCK182736</span>
-              </p>
-              <p>
-                <a href="#x">Order #34823</a>
-                <span>- Completed on 25.10.2016</span>
-              </p>
-              <p>
-                <a href="#x">Order #23463</a>
-                <span>- Completed on 16.08.2016</span>
-              </p>
-            </div>
-            <!-- / my-orders -->
-
-            <div id="my-reviews" class="account-info-content">
-              <h4>
-                MY REVIEWS
-                <span class="pull-right">
-                  <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                    <i class="lnr lnr-pencil"></i>
-                    <span>Edit</span>
-                  </a>
-                </span>
-              </h4>
-              <p>
-                <a href="#x">Order #38726</a>
-                -
-                <span>
-                  Review:
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                </span>
-              </p>
-              <p>
-                <a href="#x">Order #34823</a>
-                -
-                <span>
-                  Review:
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o"></i>
-                </span>
-              </p>
-              <p>
-                <a href="#x">Order #23463</a>
-                -
-                <span>
-                  Review:
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </span>
-              </p>
-            </div>
-            <!-- / my-reviews -->
-
-            <div id="wishlist" class="account-info-content">
-              <h4>
-                WISHLIST
-                <span class="pull-right">
-                  <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                    <i class="lnr lnr-pencil"></i>
-                    <span>Edit</span>
-                  </a>
-                </span>
-              </h4>
-              <p>
-                <a href="#x">Product 1</a>
-                -
-                <span>Price: $29</span>
-              </p>
-              <p>
-                <a href="#x">Product 2</a>
-                -
-                <span>Price: $59</span>
-              </p>
-              <p>
-                <a href="#x">Product 3</a>
-                -
-                <span>Price: $69</span>
-              </p>
-            </div>
-            <!-- / wishlist -->
-          </div>
-          <!-- / account-info -->
-        </div>
-        <!-- / row -->
-      </div>
-      <!-- / container -->
-    </section>
     <!-- / header-banner -->
   </div>
 </template>
@@ -230,13 +22,21 @@
 <style></style>
 
 <script>
+import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      currentUserId: localStorage.getItem("user_id"),
+      currentUser: {},
     };
   },
-  created: function () {},
+  created: function () {
+    axios.get("/users", { id: this.currentUserId }).then((response) => {
+      console.log("user show", response.data);
+      this.currentUser = response.data;
+      console.log(this.currentUser);
+    });
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
