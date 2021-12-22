@@ -219,11 +219,19 @@
             <div class="buy-product">
               <div class="space-25">&nbsp;</div>
 
-              <a :href="`/groups/${group.id}/events/new`" class="btn btn-primary-filled btn-rounded">
+              <a
+                v-if="$parent.getUserId() == group.user_id"
+                :href="`/groups/${group.id}/events/new`"
+                class="btn btn-primary-filled btn-rounded"
+              >
                 <i class="lnr lnr-cart"></i>
                 <span>Create Event</span>
               </a>
-              <a :href="`/groups/${group.id}/edit`" class="btn btn-success-filled btn-rounded">
+              <a
+                v-if="$parent.getUserId() == group.user_id"
+                :href="`/groups/${group.id}/edit`"
+                class="btn btn-success-filled btn-rounded"
+              >
                 <i class="lnr lnr-heart"></i>
                 <span>Update Group</span>
               </a>
