@@ -46,6 +46,7 @@
               </div>
               <!-- / product-details -->
             </div>
+            <br />
             <!-- / img-bg-color -->
           </li>
         </div>
