@@ -24,7 +24,7 @@
               <!-- wrapper for slides -->
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img src="images/product-slide1.jpg" alt="IMAGE PLACEHOLDER" />
+                  <img :src="group.image_url" alt="IMAGE PLACEHOLDER" />
                 </div>
               </div>
               <!-- / wrapper for slides -->

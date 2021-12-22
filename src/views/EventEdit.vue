@@ -50,34 +50,16 @@
 
             <div class="row">
               <div class="col-sm-6">
-                Tag 1:
-                <select v-model="tag1" class="form-control">
+                Add Tags:
+                <select v-model="tag" class="form-control">
                   <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
                 </select>
-                <a v-on:click.prevent="push1(tag1)" class="btn btn-primary-filled btn-rounded">
-                  <span>Submit Tag 1</span>
+                <a v-on:click.prevent="pushTag(tag)" class="btn btn-primary-filled btn-rounded">
+                  <span>Add Tag</span>
                 </a>
-                <br />
                 <br />
 
-                Tag 3:
-                <select v-model="tag3" class="form-control" name="country">
-                  <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
-                </select>
-                <a v-on:click.prevent="push3(tag3)" class="btn btn-primary-filled btn-rounded">
-                  <span>Submit Tag 3</span>
-                </a>
                 <br />
-                <br />
-              </div>
-              <div class="col-sm-6">
-                Tag 2:
-                <select v-model="tag2" class="form-control" name="country">
-                  <option v-for="tag in tags" :key="tag.id">{{ tag.tag }}</option>
-                </select>
-                <a v-on:click.prevent="push2(tag2)" class="btn btn-primary-filled btn-rounded">
-                  <span>Submit Tag 2</span>
-                </a>
               </div>
             </div>
             <!-- / row -->
@@ -110,9 +92,7 @@ export default {
       event: {},
       errors: [],
       tags: [],
-      tag1: "",
-      tag2: "",
-      tag3: "",
+      tag: "",
     };
   },
   created: function () {
@@ -142,37 +122,11 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
-    push1: function (tag) {
-      this.tag1 = tag;
-      console.log(this.tag1);
+    pushTag: function (tag) {
+      this.tag = tag;
+      console.log(this.tag);
       axios
-        .post("/events/" + this.$route.params.id + "/tags", { tag: this.tag1, event: this.event.id })
-        .then((response) => {
-          console.log("tag event created", response.data);
-        })
-        .catch((error) => {
-          console.log("tag event error", error.response);
-          this.errors = error.response.data.errors;
-        });
-    },
-    push2: function (tag) {
-      this.tag2 = tag;
-      console.log(this.tag2);
-      axios
-        .post("/events/" + this.$route.params.id + "/tags", { tag_id: this.tag2, event: this.event.id })
-        .then((response) => {
-          console.log("tag event created", response.data);
-        })
-        .catch((error) => {
-          console.log("tag event error", error.response);
-          this.errors = error.response.data.errors;
-        });
-    },
-    push3: function (tag) {
-      this.tag3 = tag;
-      console.log(this.tag3);
-      axios
-        .post("/events/" + this.$route.params.id + "/tags", { tag_id: this.tag3, event: this.event.id })
+        .post("/events/" + this.$route.params.id + "/tags", { tag: this.tag, event: this.event.id })
         .then((response) => {
           console.log("tag event created", response.data);
         })

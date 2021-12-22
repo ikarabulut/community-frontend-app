@@ -12,7 +12,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="/">
+              <img class="logo" src="https://images.pexels.com/photos/4672720/pexels-photo-4672720.jpeg" alt="logo" />
+            </a>
           </div>
           <!-- / navbar-header -->
           <div class="secondary-nav">
@@ -166,12 +168,14 @@
             <div class="col-md-4 widget">
               <div class="about-widget">
                 <div class="widget-title-image">
-                  <img src="images/logo2.png" alt="" />
+                  <img class="logo" src="https://images.pexels.com/photos/4672720/pexels-photo-4672720.jpeg" alt="" />
                 </div>
                 <p>
-                  Vivamus consequat lacus quam, nec egestas quam egestas sit amet. Suspendisse et risus gravida tellus
-                  aliquam ullamcorper. Pellentesque elit dolor, ornare ut lorem nec, convallis nibh accumsan lacus morbi
-                  leo lipsum.
+                  I'm baby etsy iPhone shaman bicycle rights +1 meh. Af flexitarian keffiyeh neutra fanny pack offal yr
+                  venmo schlitz tbh mlkshk. Normcore hoodie portland, pitchfork pinterest migas bitters mlkshk before
+                  they sold out. Banjo seitan keytar raclette. Umami shabby chic polaroid, helvetica kale chips
+                  readymade palo santo. Salvia +1 locavore, four loko poutine artisan ennui food truck gentrify mustache
+                  squid activated charcoal.
                 </p>
               </div>
               <!-- / about-widget -->
@@ -179,47 +183,9 @@
             <!-- / widget -->
             <!-- / first widget -->
 
-            <div class="col-md-2 widget">
-              <div class="widget-title">
-                <h4>BRANDS</h4>
-              </div>
-              <div class="link-widget">
-                <div class="info">
-                  <a href="#x">Brand 1</a>
-                </div>
-                <div class="info">
-                  <a href="#x">Brand 2</a>
-                </div>
-                <div class="info">
-                  <a href="#x">Brand 3</a>
-                </div>
-                <div class="info">
-                  <a href="#x">Brand 4</a>
-                </div>
-              </div>
-            </div>
             <!-- / widget -->
             <!-- / second widget -->
 
-            <div class="col-md-2 widget">
-              <div class="widget-title">
-                <h4>SUPPORT</h4>
-              </div>
-              <div class="link-widget">
-                <div class="info">
-                  <a href="#x">Terms & Conditions</a>
-                </div>
-                <div class="info">
-                  <a href="#x">Shipping & Return</a>
-                </div>
-                <div class="info">
-                  <a href="faq.html">F.A.Q</a>
-                </div>
-                <div class="info">
-                  <a href="contact.html">Contact</a>
-                </div>
-              </div>
-            </div>
             <!-- / widget -->
             <!-- / third widget -->
 
@@ -231,19 +197,14 @@
                 <div class="info">
                   <p>
                     <i class="lnr lnr-map-marker"></i>
-                    <span>Miami, S Miami Ave, SW 20th, Store No.1</span>
+                    <span>Chicago, IL</span>
                   </p>
                 </div>
-                <div class="info">
-                  <a href="tel:+0123456789">
-                    <i class="lnr lnr-phone-handset"></i>
-                    <span>+0123 456 789</span>
-                  </a>
-                </div>
+
                 <div class="info">
                   <a href="mailto:hello@yoursite.com">
                     <i class="lnr lnr-envelope"></i>
-                    <span>office@yoursite.com</span>
+                    <span>contactus@communityapp.com</span>
                   </a>
                 </div>
                 <div class="info">
@@ -251,9 +212,8 @@
                   <span class="social text-left">
                     <a class="no-margin" href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
                   </span>
                 </div>
               </div>
@@ -267,20 +227,7 @@
         <!-- / container -->
       </div>
       <!-- / widget-area -->
-      <div class="footer-info">
-        <div class="container">
-          <div class="pull-left copyright">
-            <p><strong>© MS - MINIMAL SHOP THEME</strong></p>
-          </div>
-          <span class="pull-right">
-            <img src="images/visa.png" alt="" />
-            <img src="images/mastercard.png" alt="" />
-            <img src="images/discover.png" alt="" />
-            <img src="images/paypal.png" alt="" />
-          </span>
-        </div>
-        <!-- / container -->
-      </div>
+
       <!-- / footer-info -->
     </footer>
     <!-- / footer -->

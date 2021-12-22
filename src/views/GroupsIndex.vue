@@ -6,8 +6,7 @@
       <div class="banner-content single-page text-center">
         <div class="banner-border">
           <div class="banner-info">
-            <h1>Fashion Shop</h1>
-            <p>Fullwidth shop page</p>
+            <h1>ALL GROUPS</h1>
           </div>
           <!-- / banner-info -->
         </div>
@@ -21,11 +20,12 @@
         <!-- product -->
         <div v-for="group in groups" v-bind:key="group.id">
           <li class="col-xs-6 col-md-4 product m-product" data-groups='["mens"]'>
+            <br />
             <div class="img-bg-color primary">
               <!-- <h5 class="product-price">$49</h5> -->
               <a href="/groups" class="product-link"></a>
               <!-- / product-link -->
-              <img src="images/m-product.jpg" alt="" />
+              <img :src="group.image_url" alt="" />
               <!-- / product-image -->
 
               <!-- product-hover-tools -->
@@ -42,7 +42,7 @@
               <!-- product-details -->
               <div class="product-details">
                 <h5 class="product-title">{{ group.name }}</h5>
-                <p class="product-category">{{ group.mission_statement }}</p>
+                <p class="product-category">Cause(s): {{ group.cause }}</p>
               </div>
               <!-- / product-details -->
             </div>

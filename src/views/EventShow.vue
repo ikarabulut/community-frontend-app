@@ -1,168 +1,166 @@
 <template>
   <div class="event-show">
-    <header>
-      <!-- header-banner -->
-      <div id="header-banner">
-        <div class="banner-content single-page text-center">
-          <div class="banner-border">
-            <div :key="event" class="banner-info">
-              <h1>Event</h1>
-              <p>{{ event.name }}</p>
-            </div>
-            <!-- / banner-info -->
+    <!-- header-banner -->
+    <div id="header-banner">
+      <div class="banner-content single-page text-center">
+        <div class="banner-border">
+          <div :key="event" class="banner-info">
+            <h1>Event</h1>
+            <p>{{ event.name }}</p>
           </div>
-          <!-- / banner-border -->
+          <!-- / banner-info -->
         </div>
-        <!-- / banner-content -->
+        <!-- / banner-border -->
       </div>
-      <!-- / header-banner -->
-    </header>
+      <!-- / banner-content -->
+    </div>
+
     <!-- / header -->
 
     <!-- content -->
 
     <!-- shop single-product -->
-    <section id="shop">
-      <div class="container space-top-30">
-        <div class="row">
-          <!-- product content area -->
-          <div class="col-sm-6 col-md-7 product-content-area">
-            <div class="product-content-area">
-              <div id="product-slider" class="carousel slide" data-ride="carousel">
-                <!-- wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                  <div class="item active">
-                    <img :src="event.image_url" alt="Event Image Placeholder" />
-                  </div>
+
+    <div class="container space-top-30">
+      <div class="row">
+        <!-- product content area -->
+        <div class="col-sm-6 col-md-7 product-content-area">
+          <div class="product-content-area">
+            <div id="product-slider" class="carousel slide" data-ride="carousel">
+              <!-- wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img :src="event.image_url" alt="Event Image Placeholder" />
                 </div>
-                <!-- / wrapper for slides -->
-
-                <!-- controls -->
-
-                <!-- / controls -->
               </div>
-              <!-- / product-slider -->
+              <!-- / wrapper for slides -->
 
-              <ul class="nav nav-tabs" role="tablist">
-                <li class="active">
-                  <a href="#description" role="tab" data-toggle="tab" aria-expanded="true">DESCRIPTION</a>
-                </li>
-              </ul>
-              <!-- / nav-tabs -->
-              <div :key="event.id" class="tab-content">
-                <div role="tabpanel" class="tab-pane animated fadeIn active" id="description">
-                  <p>
-                    {{ event.description }}
-                  </p>
-                </div>
-                <!-- / description-tab -->
+              <!-- controls -->
 
-                <!-- / info-tab -->
-
-                <!-- / reviews-tab -->
-              </div>
-              <!-- / tab-content -->
+              <!-- / controls -->
             </div>
-            <!-- / product-content-area -->
+            <!-- / product-slider -->
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active">
+                <a href="#description" role="tab" data-toggle="tab" aria-expanded="true">DESCRIPTION</a>
+              </li>
+            </ul>
+            <!-- / nav-tabs -->
+            <div :key="event.id" class="tab-content">
+              <div role="tabpanel" class="tab-pane animated fadeIn active" id="description">
+                <p>
+                  {{ event.description }}
+                </p>
+              </div>
+              <!-- / description-tab -->
+
+              <!-- / info-tab -->
+
+              <!-- / reviews-tab -->
+            </div>
+            <!-- / tab-content -->
           </div>
           <!-- / product-content-area -->
+        </div>
+        <!-- / product-content-area -->
 
-          <!-- product sidebar area -->
-          <div class="col-sm-6 col-md-5 product-sidebar">
-            <div class="product-sidebar-details">
-              <h4 :key="event.id">{{ event.name }}</h4>
-              <p :key="event.id">This event is hosted by {{ event.group.name }}</p>
-              <div class="product-info">
-                <div :key="event.id" class="info">
-                  <p>
-                    <i class="lnr lnr-heart"></i>
-                    <span>Date:{{ event.date }}</span>
-                  </p>
-                </div>
-                <div :key="event.id" class="info">
-                  <p>
-                    <i class="lnr lnr-heart"></i>
-                    <span>Start Time:{{ event.start_time }}</span>
-                  </p>
-                </div>
-                <div :key="event.id" class="info">
-                  <p>
-                    <i class="lnr lnr-heart"></i>
-                    <span>Duration:{{ event.duration }}</span>
-                  </p>
-                </div>
-                <div class="info">
-                  <p>
-                    <i class="lnr lnr-heart"></i>
-                    <span>
-                      Tags:
-                      <a h-ref="" v-for="eventTag in eventTags" :key="eventTag.id">| {{ eventTag.tag.tag }} |</a>
-                    </span>
-                  </p>
-                </div>
-                <div class="info">
-                  <p>
-                    <i class="lnr lnr-menu"></i>
-                    <span>Volunteers Needed: {{ event.volunteers_needed }}</span>
-                  </p>
-                  <p>
-                    <i class="lnr lnr-menu"></i>
-                    <span>RSVPs (Going):</span>
-                  </p>
-                  <p>
-                    <i class="lnr lnr-menu"></i>
-                    <span>RSVPs (Maybe):</span>
-                  </p>
-                </div>
+        <!-- product sidebar area -->
+        <div class="col-sm-6 col-md-5 product-sidebar">
+          <div class="product-sidebar-details">
+            <h4 :key="event.id">{{ event.name }}</h4>
+            <p :key="event.id">This event is hosted by {{ event.group.name }}</p>
+            <div class="product-info">
+              <div :key="event.id" class="info">
+                <p>
+                  <i class="lnr lnr-heart"></i>
+                  <span>Date:{{ event.date }}</span>
+                </p>
               </div>
-              <!-- / product-info -->
-
-              <div class="buy-product">
-                <div v-if="$parent.isLoggedIn()" class="options">
-                  <span class="selectors">
-                    <select v-model="rsvp" class="selectpicker">
-                      <option>-</option>
-                      <option>Going</option>
-                      <option>Maybe</option>
-                      <option>No</option>
-                    </select>
+              <div :key="event.id" class="info">
+                <p>
+                  <i class="lnr lnr-heart"></i>
+                  <span>Start Time:{{ event.start_time }}</span>
+                </p>
+              </div>
+              <div :key="event.id" class="info">
+                <p>
+                  <i class="lnr lnr-heart"></i>
+                  <span>Duration:{{ event.duration }}</span>
+                </p>
+              </div>
+              <div class="info">
+                <p>
+                  <i class="lnr lnr-heart"></i>
+                  <span>
+                    Tags:
+                    <a h-ref="" v-for="eventTag in eventTags" :key="eventTag.id">| {{ eventTag.tag.tag }} |</a>
                   </span>
-                </div>
-                <br />
-
-                <!-- / options -->
-
-                <div class="space-25">&nbsp;</div>
-
-                <a
-                  v-if="$parent.isLoggedIn()"
-                  v-on:click.prevent="pushRsvp(rsvp)"
-                  class="btn btn-primary-filled btn-rounded"
-                >
-                  <i class=""></i>
-                  <span>Submit RSVP</span>
-                </a>
-                <a
-                  v-if="$parent.getUserId() == event.group.user_id"
-                  :href="`/events/${event.id}/edit`"
-                  class="btn btn-success-filled btn-rounded"
-                >
-                  <i class=""></i>
-                  <span>Update Event</span>
-                </a>
+                </p>
+              </div>
+              <div class="info">
+                <p>
+                  <i class="lnr lnr-menu"></i>
+                  <span>Volunteers Needed: {{ event.volunteers_needed }}</span>
+                </p>
+                <p>
+                  <i class="lnr lnr-menu"></i>
+                  <span>RSVPs (Going):</span>
+                </p>
+                <p>
+                  <i class="lnr lnr-menu"></i>
+                  <span>RSVPs (Maybe):</span>
+                </p>
               </div>
             </div>
-            <!-- product-details -->
-          </div>
-          <!-- / col-sm-4 col-md-3 -->
-          <!-- / product sidebar area -->
-        </div>
-        <!-- / row -->
+            <!-- / product-info -->
 
-        <!-- / related-products -->
+            <div class="buy-product">
+              <div v-if="$parent.isLoggedIn()" class="options">
+                <span class="selectors">
+                  <select v-model="rsvp" class="selectpicker">
+                    <option>-</option>
+                    <option>Going</option>
+                    <option>Maybe</option>
+                    <option>No</option>
+                  </select>
+                </span>
+              </div>
+              <br />
+
+              <!-- / options -->
+
+              <div class="space-25">&nbsp;</div>
+
+              <a
+                v-if="$parent.isLoggedIn()"
+                v-on:click.prevent="pushRsvp(rsvp)"
+                class="btn btn-primary-filled btn-rounded"
+              >
+                <i class=""></i>
+                <span>Submit RSVP</span>
+              </a>
+              <a
+                v-if="$parent.getUserId() == event.group.user_id"
+                :href="`/events/${event.id}/edit`"
+                class="btn btn-success-filled btn-rounded"
+              >
+                <i class=""></i>
+                <span>Update Event</span>
+              </a>
+            </div>
+          </div>
+          <!-- product-details -->
+        </div>
+        <!-- / col-sm-4 col-md-3 -->
+        <!-- / product sidebar area -->
       </div>
-      <!-- / container -->
-    </section>
+      <!-- / row -->
+
+      <!-- / related-products -->
+    </div>
+    <!-- / container -->
+
     <!-- / shop single-product -->
 
     <!-- / content -->

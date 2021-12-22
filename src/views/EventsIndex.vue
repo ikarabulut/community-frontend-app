@@ -5,8 +5,7 @@
       <div class="banner-content single-page text-center">
         <div class="banner-border">
           <div class="banner-info">
-            <h1>Fashion Shop</h1>
-            <p>Fullwidth shop page</p>
+            <h1>ALL EVENTS</h1>
           </div>
           <!-- / banner-info -->
         </div>
@@ -20,11 +19,12 @@
         <!-- product -->
         <div v-for="event in events" v-bind:key="event.id">
           <li class="col-xs-6 col-md-4 product m-product" data-groups='["mens"]'>
+            <br />
             <div class="img-bg-color primary">
               <!-- <h5 class="product-price">$49</h5> -->
               <a href="/events" class="product-link"></a>
               <!-- / product-link -->
-              <img src="images/m-product.jpg" alt="" />
+              <img :src="event.image_url" alt="" />
               <!-- / product-image -->
 
               <!-- product-hover-tools -->
