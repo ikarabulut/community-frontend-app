@@ -223,7 +223,7 @@
                 <i class="lnr lnr-cart"></i>
                 <span>Create Event</span>
               </a>
-              <a :href="`groups/${group.id}/edit`" class="btn btn-success-filled btn-rounded">
+              <a :href="`/groups/${group.id}/edit`" class="btn btn-success-filled btn-rounded">
                 <i class="lnr lnr-heart"></i>
                 <span>Update Group</span>
               </a>
