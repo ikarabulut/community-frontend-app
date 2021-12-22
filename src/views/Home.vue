@@ -66,82 +66,8 @@
               <!-- / row -->
             </div>
 
-            <div id="personal-info" class="account-info-content">
-              <h4>MY EVENTS</h4>
-              <div v-for="rsvp in rsvps" :key="rsvp.id" class="row">
-                <div class="col-xs-6 col-sm-8 col-md-10">
-                  <p>
-                    Event Name:
-                    <span>{{ rsvp.event.name }}</span>
-                  </p>
-                  <p>
-                    Event Date:
-                    <span>{{ rsvp.event.date }}</span>
-                  </p>
-                  <p>
-                    RSVP type:
-                    <span>{{ rsvp.rsvp_type }}</span>
-                  </p>
-                  <router-link v-bind:to="`/events/${rsvp.event.id}`" class="btn btn-primary-filled btn-rounded">
-                    <span>View Event</span>
-                  </router-link>
-                  <br />
-                  <br />
-                </div>
-              </div>
-
-              <!-- / row -->
-            </div>
             <!-- / personal-info -->
 
-            <div id="shipping-info" class="account-info-content">
-              <h4>MY GROUPS</h4>
-              <p>
-                Country:
-                <span>USA</span>
-              </p>
-              <p>
-                State:
-                <span>Florida</span>
-              </p>
-              <p>
-                City:
-                <span>Miami</span>
-              </p>
-              <p>
-                Address Line:
-                <span>S Miami Ave, SW 20th, Suite 3864</span>
-              </p>
-              <p>
-                ZIP Code:
-                <span>33222</span>
-              </p>
-              <div class="account-info-footer">
-                <a href="#x" class="btn btn-sm btn-primary btn-rounded no-margin">
-                  <i class="fa fa-plus"></i>
-                  <span>Add New Address</span>
-                </a>
-              </div>
-            </div>
-            <!-- / shipping-info -->
-
-            <div id="my-orders" class="account-info-content">
-              <h4>MY EVENTS</h4>
-              <p>
-                <a href="#x">Order #38726</a>
-                <span>- Paid & Shipped</span>
-                - Tracking No:
-                <span>#TRCK182736</span>
-              </p>
-              <p>
-                <a href="#x">Order #34823</a>
-                <span>- Completed on 25.10.2016</span>
-              </p>
-              <p>
-                <a href="#x">Order #23463</a>
-                <span>- Completed on 16.08.2016</span>
-              </p>
-            </div>
             <!-- / my-orders -->
 
             <!-- / my-reviews -->
@@ -170,6 +96,7 @@ export default {
       currentUser: {},
       rsvps: [],
       groups: [],
+      events: [],
     };
   },
   created: function () {
@@ -185,6 +112,10 @@ export default {
     axios.get("/users/groups").then((response) => {
       console.log("Current User Groups", response.data);
       this.groups = response.data;
+    });
+    axios.get("users/events").then((response) => {
+      console.log("Current User Events", response.data);
+      this.events = response.data;
     });
   },
   methods: {
