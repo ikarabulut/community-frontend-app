@@ -210,9 +210,9 @@
                 <div class="info">
                   <p>
                     <i class="lnr lnr-heart"></i>
-                    <span v-for="eventTag in eventTags" :key="eventTag.id">
+                    <span>
                       Tags:
-                      <a>{{ eventTag.tag.tag }}</a>
+                      <a h-ref="" v-for="eventTag in eventTags" :key="eventTag.id">| {{ eventTag.tag.tag }} |</a>
                     </span>
                   </p>
                 </div>
@@ -226,7 +226,7 @@
               <!-- / product-info -->
 
               <div class="buy-product">
-                <div class="options">
+                <div v-if="$parent.isLoggedIn()" class="options">
                   <span class="selectors">
                     <select v-model="rsvp" class="selectpicker">
                       <option>-</option>
@@ -242,11 +242,19 @@
 
                 <div class="space-25">&nbsp;</div>
 
-                <a v-on:click.prevent="pushRsvp(rsvp)" class="btn btn-primary-filled btn-rounded">
+                <a
+                  v-if="$parent.isLoggedIn()"
+                  v-on:click.prevent="pushRsvp(rsvp)"
+                  class="btn btn-primary-filled btn-rounded"
+                >
                   <i class=""></i>
                   <span>Submit RSVP</span>
                 </a>
-                <a :href="`/events/${event.id}/edit`" class="btn btn-success-filled btn-rounded">
+                <a
+                  v-if="$parent.getUserId() == event.group.user_id"
+                  :href="`/events/${event.id}/edit`"
+                  class="btn btn-success-filled btn-rounded"
+                >
                   <i class=""></i>
                   <span>Update Event</span>
                 </a>
