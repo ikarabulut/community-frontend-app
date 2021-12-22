@@ -1,21 +1,20 @@
 <template>
   <div class="group-edit">
-    <header>
-      <!-- header-banner -->
-      <div id="header-banner">
-        <div class="banner-content single-page text-center">
-          <div class="banner-border">
-            <div class="banner-info">
-              <h1>Update Group</h1>
-            </div>
-            <!-- / banner-info -->
+    <!-- header-banner -->
+    <div id="header-banner">
+      <div class="banner-content single-page text-center">
+        <div class="banner-border">
+          <div class="banner-info">
+            <h1>Update Group</h1>
           </div>
-          <!-- / banner-border -->
+          <!-- / banner-info -->
         </div>
-        <!-- / banner-content -->
+        <!-- / banner-border -->
       </div>
-      <!-- / header-banner -->
-    </header>
+      <!-- / banner-content -->
+    </div>
+    <!-- / header-banner -->
+
     <!-- / header -->
 
     <!-- content -->

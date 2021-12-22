@@ -16,7 +16,7 @@
           </div>
           <!-- / navbar-header -->
           <div class="secondary-nav">
-            <a class="my-account space-right">
+            <a v-if="isLoggedIn()" class="my-account space-right">
               Welcome: {{ this.current_user }}
               <i class="fa fa-user"></i>
             </a>
@@ -28,9 +28,6 @@
               </li>
               <li>
                 <a href="contact.html"><span>MY HOME (BUILD)</span></a>
-              </li>
-              <li>
-                <a href="/about"><span>ABOUT</span></a>
               </li>
 
               <!-- <li class="dropdown">
@@ -79,11 +76,9 @@
                   <li>
                     <a href="/groups"><span>ALL GROUPS</span></a>
                   </li>
+
                   <li>
-                    <a href="shop-right.html"><span>MY GROUPS (BUILD)</span></a>
-                  </li>
-                  <li>
-                    <a href="/groups/new"><span>CREATE GROUP</span></a>
+                    <a href="/group/new"><span>CREATE GROUP</span></a>
                   </li>
                   <!-- <li>
                     <a href="shop-masonry.html"><span>MASONRY</span></a>
@@ -114,9 +109,6 @@
                 <ul class="dropdown-menu animated zoomIn fast">
                   <li>
                     <a href="/events"><span>ALL EVENTS</span></a>
-                  </li>
-                  <li>
-                    <a href="shopping-cart.html"><span>MY EVENTS (BUILD)</span></a>
                   </li>
                 </ul>
               </li>
