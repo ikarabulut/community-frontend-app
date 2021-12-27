@@ -5,6 +5,8 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "https://fast-reef-47047.herokuapp.com" : "/";
 
+axios.defaults.baseURL = process.env.NODE_ENV === "production" ? "https://fast-reef-47047.herokuapp.com" : "/";
+
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
   axios.defaults.headers.common["Authorization"] = "Bearer " + jwt;
