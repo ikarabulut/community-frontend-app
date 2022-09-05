@@ -1,6 +1,6 @@
 Community App
 
-This app This is my first project completed through Actualize coding bootcamp. Community is a one-stop shop to help empower your local community without all of the noise caused by other social sites.
+This is my first project completed through Actualize coding bootcamp. Community is a one-stop shop to help empower your local community without all of the noise caused by other social sites.
 
 Community is built on a Rails backend utilizing a Postgres database. The frontend is done using Vue.js and Bootstrap.
 
